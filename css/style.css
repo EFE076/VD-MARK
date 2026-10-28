@@ -1151,3 +1151,6 @@ h2{line-height:1.13;letter-spacing:-.045em}
 .car-placeholder-content strong{font-size:.84rem;letter-spacing:.11em}
 .car-placeholder-content small{font-size:.73rem;color:#ddd}
 .car-placeholder-icon{font-size:3rem;color:#ffcc00;line-height:1}
+
+.car-image.car-placeholder>span{position:absolute;top:14px;left:14px;background:#ffcc00;color:#111;font-size:.7rem;font-weight:800;letter-spacing:.08em;padding:5px 9px;border-radius:5px}
+.car-placeholder-content .car-placeholder-icon{position:static;background:none;padding:0;border-radius:0;font-size:3rem;color:#ffcc00}
