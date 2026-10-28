@@ -1154,3 +1154,9 @@ h2{line-height:1.13;letter-spacing:-.045em}
 
 .car-image.car-placeholder>span{position:absolute;top:14px;left:14px;background:#ffcc00;color:#111;font-size:.7rem;font-weight:800;letter-spacing:.08em;padding:5px 9px;border-radius:5px}
 .car-placeholder-content .car-placeholder-icon{position:static;background:none;padding:0;border-radius:0;font-size:3rem;color:#ffcc00}
+
+/* Officieel logo: behoud oorspronkelijke verhoudingen en geen nagemaakt woordmerk */
+.brand{display:flex;align-items:center;justify-content:center;min-width:220px;flex:0 0 255px;padding:8px 0}
+.brand-official-logo{display:block;width:min(100%,255px);height:auto;object-fit:contain}
+@media(max-width:1050px){.brand{min-width:165px;flex-basis:190px}.brand-official-logo{width:190px}}
+@media(max-width:680px){.brand{min-width:0;flex:0 1 185px;align-items:center}.brand-official-logo{width:185px;max-width:100%}}
