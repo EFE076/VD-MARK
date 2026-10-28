@@ -10,3 +10,37 @@
 .editorial-photo-caption strong{font-size:1.2rem;line-height:1.3}
 .editorial-photo-caption span{color:#e5ebeb;font-size:.9rem}
 @media(max-width:680px){.hero-art{aspect-ratio:725/300}.split-visual{aspect-ratio:725/340}.editorial-photo img{height:240px}.editorial-photo-caption{padding:32px 18px 16px}}
+
+
+/* Huisstijl Van der Mark — geel, zwart en wit */
+:root{--red:#ffcc00;--dark:#151515;--ink:#181818;--muted:#626262;--line:#e1e1e1;--light:#f5f5f5;--white:#fff}
+body{color:var(--ink)}
+.demo-strip{background:#171717;color:#fff}
+.site-header{background:#fff;border-bottom:1px solid #e7e7e7}
+.header-inner{gap:24px;min-height:104px}
+.brand{display:flex;flex:0 0 auto;flex-direction:column;align-items:center;justify-content:center;gap:5px;line-height:1.1;min-width:235px}
+.brand-logo{display:block;background:#ffcf00;color:#101010;border:5px solid #101010;border-radius:18px;box-shadow:inset 0 0 0 2px #fff,0 0 0 1px #888;padding:7px 13px 5px;font-size:clamp(1.35rem,2.2vw,2rem);font-weight:950;letter-spacing:.11em;white-space:nowrap}
+.brand-tagline{font-size:.69rem;font-weight:800;letter-spacing:.22em;color:#181818;white-space:nowrap}
+.nav{background:#ffcc00;border-radius:22px 0 0 22px;min-height:82px;padding:0 26px;gap:clamp(12px,2.2vw,32px);flex:1;justify-content:space-evenly}
+.nav a{color:#141414;font-size:.85rem;text-transform:uppercase;font-weight:850;letter-spacing:.02em;border-bottom:3px solid transparent;white-space:nowrap;padding:29px 0}
+.nav a:hover,.nav a.active{color:#111;border-bottom-color:#111}
+.hero{background:linear-gradient(115deg,#191919,#303030)}
+.hero .eyebrow,.eyebrow.light{color:#ffdb50}
+.hero p{color:#ececec}
+.hero h1 em{color:#fff}
+.hero-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px 28px;border-top:1px solid #ffffff40;padding:23px 0}
+.hero-footer span{display:inline-block;white-space:nowrap;font-size:.82rem;font-weight:800;letter-spacing:.055em}
+.btn-primary{background:#ffcc00;color:#111;border-color:#ffcc00}
+.btn-primary:hover{background:#e8b900;border-color:#e8b900}
+.btn-outline{color:#fff;border-color:#fff;background:transparent}
+.btn-outline:hover{color:#111;background:#fff}
+.btn-dark{background:#171717;color:#fff}
+.btn-white{background:#fff;color:#111}
+.text-link,.eyebrow,.car-bottom a{color:#a57c00}
+.service-icon,.detail-icon{background:#fff3b8;color:#171717}
+.cta-band{background:#1b1b1b}
+.car-image span{background:#ffcc00;color:#111}
+.footer{background:#141414}
+.filters input:focus,.filters select:focus,.form-panel input:focus,.form-panel textarea:focus{outline-color:#e0ae00}
+@media(max-width:1050px){.header-inner{gap:12px}.brand{min-width:190px}.brand-logo{font-size:1.4rem}.brand-tagline{font-size:.58rem}.nav{gap:10px;padding:0 14px}.nav a{font-size:.72rem}}
+@media(max-width:680px){.header-inner{min-height:82px}.brand{min-width:0;align-items:flex-start}.brand-logo{font-size:1.25rem;padding:5px 9px;border-width:4px;border-radius:12px}.brand-tagline{font-size:.52rem;letter-spacing:.12em}.menu-toggle{display:block;background:#ffcc00;border-color:#111}.nav{display:none;position:absolute;top:100%;left:0;right:0;min-height:0;padding:14px 20px;border-radius:0;box-shadow:0 15px 25px #0002;flex-direction:column;align-items:stretch;gap:0}.nav.open{display:flex}.nav a{padding:13px 6px;font-size:.9rem}.hero-footer{justify-content:flex-start;gap:10px 20px}.hero-footer span{font-size:.72rem}}
