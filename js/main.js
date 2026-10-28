@@ -7,7 +7,7 @@ if(menuButton&&nav){
   nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu));
   document.addEventListener('keydown',event=>{if(event.key==='Escape')closeMenu();});
   document.addEventListener('click',event=>{if(!nav.contains(event.target)&&!menuButton.contains(event.target))closeMenu();});
-  window.addEventListener('resize',()=>{if(window.innerWidth>680)closeMenu();});
+  window.addEventListener('resize',()=>{if(window.innerWidth>900)closeMenu();});
 }
 const year=document.querySelector('#year');if(year)year.textContent=String(new Date().getFullYear());
 const form=document.querySelector('#contact-form');
