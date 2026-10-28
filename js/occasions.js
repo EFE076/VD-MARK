@@ -43,3 +43,6 @@ if(search&&brand&&price&&sort&&grid&&count&&empty){
   [search,brand,price,sort].forEach(control=>control.addEventListener(control===search?'input':'change',render));
   render();
 }
+
+const resetFilters=document.querySelector('#reset-filters');
+if(resetFilters&&search&&brand&&price&&sort){resetFilters.addEventListener('click',()=>{search.value='';brand.value='';price.value='';sort.value='default';search.dispatchEvent(new Event('input'));search.focus();});}
