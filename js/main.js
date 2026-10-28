@@ -1,1 +1,27 @@
-const menuButton=document.querySelector('#menu-toggle');const nav=document.querySelector('#main-nav');if(menuButton&&nav){menuButton.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open));menuButton.setAttribute('aria-label',open?'Sluit navigatie':'Open navigatie')});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuButton.setAttribute('aria-expanded','false')}));document.addEventListener('keydown',e=>{if(e.key==='Escape'){nav.classList.remove('open');menuButton.setAttribute('aria-expanded','false')}})}const year=document.querySelector('#year');if(year)year.textContent=new Date().getFullYear();const form=document.querySelector('#contact-form');if(form){form.addEventListener('submit',e=>{e.preventDefault();const status=document.querySelector('#form-status');const name=form.elements.namedItem('name').value.trim();const email=form.elements.namedItem('email').value.trim();const subject=form.elements.namedItem('subject').value;const message=form.elements.namedItem('message').value.trim();if(name.length<2||!email||!form.elements.namedItem('email').validity.valid||!subject||message.length<10){status.textContent='Vul alle verplichte velden correct in (bericht minimaal 10 tekens).';status.className='form-status error';return}status.textContent='Demo geslaagd: het formulier is geldig. Er is geen bericht verstuurd.';status.className='form-status success';form.reset()})}
+'use strict';
+const menuButton=document.querySelector('#menu-toggle');
+const nav=document.querySelector('#main-nav');
+function closeMenu(){if(!nav||!menuButton)return;nav.classList.remove('open');menuButton.setAttribute('aria-expanded','false');menuButton.setAttribute('aria-label','Open navigatie');}
+if(menuButton&&nav){
+  menuButton.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open));menuButton.setAttribute('aria-label',open?'Sluit navigatie':'Open navigatie');});
+  nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu));
+  document.addEventListener('keydown',event=>{if(event.key==='Escape')closeMenu();});
+  document.addEventListener('click',event=>{if(!nav.contains(event.target)&&!menuButton.contains(event.target))closeMenu();});
+  window.addEventListener('resize',()=>{if(window.innerWidth>680)closeMenu();});
+}
+const year=document.querySelector('#year');if(year)year.textContent=String(new Date().getFullYear());
+const form=document.querySelector('#contact-form');
+if(form){
+  const status=document.querySelector('#form-status');
+  form.addEventListener('submit',event=>{
+    event.preventDefault();
+    const name=form.elements.namedItem('name').value.trim();
+    const emailField=form.elements.namedItem('email');
+    const subject=form.elements.namedItem('subject').value;
+    const message=form.elements.namedItem('message').value.trim();
+    const valid=name.length>=2&&emailField.validity.valid&&emailField.value.trim()!==''&&subject&&message.length>=10;
+    status.className='form-status '+(valid?'success':'error');
+    status.textContent=valid?'Demo geslaagd: alle velden zijn correct ingevuld. Er is geen bericht verzonden.':'Controleer de verplichte velden. Uw bericht moet minimaal 10 tekens bevatten.';
+    if(valid)form.reset();
+  });
+}
